@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 127751049}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  range: 8
+  health: 0
 --- !u!1 &234693222
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca11c512f1b3784db40ccafcf8821c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 4145954245777113893, guid: 9a07c73bccf74e9429019a000f9d4729, type: 3}
+  round: 0
 --- !u!4 &234693224
 Transform:
   m_ObjectHideFlags: 0
@@ -490,7 +493,7 @@ MonoBehaviour:
   player: {fileID: 127751044}
   bulletPrefab: {fileID: 4405436979919108211, guid: f1fae1f170d80a344b1f65f6a945e81f,
     type: 3}
-  bulletSpeed: 25
+  bulletSpeed: 10
 --- !u!1 &1351116909
 GameObject:
   m_ObjectHideFlags: 0
