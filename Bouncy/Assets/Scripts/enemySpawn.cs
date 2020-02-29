@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemies;
     private Vector3 randomPos;
     public int round;
 
@@ -15,8 +15,19 @@ public class enemySpawn : MonoBehaviour
             randomPos.x = Random.Range(-8.0f, 8.0f);
             randomPos.y = Random.Range(-5.0f, 5.0f);
 
-            Instantiate(enemy,transform.position + randomPos,Quaternion.identity);
+
+
+            Instantiate(enemies[0],transform.position + randomPos,Quaternion.identity);
         }
+    }
+
+    public int getIndex(int scale) {
+        //scale will be the parameter for the round that the game is on.
+        int num = 0;
+        if (scale < 10) {
+            num = (int)Random.Range(0f, 1f);
+        }
+        return num;
     }
 
     public int getRound() {

@@ -296,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca11c512f1b3784db40ccafcf8821c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4145954245777113893, guid: 9a07c73bccf74e9429019a000f9d4729, type: 3}
+  enemies:
+  - {fileID: 4145954245777113893, guid: 9a07c73bccf74e9429019a000f9d4729, type: 3}
   round: 0
 --- !u!4 &234693224
 Transform:
