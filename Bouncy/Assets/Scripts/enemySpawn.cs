@@ -5,19 +5,20 @@ using UnityEngine;
 public class enemySpawn : MonoBehaviour
 {
     public GameObject[] enemies;
+    // [0] enemy 1
+
     private Vector3 randomPos;
     public int round;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 4; i++) {
-            randomPos.x = Random.Range(-8.0f, 8.0f);
-            randomPos.y = Random.Range(-5.0f, 5.0f);
+        for (int i = 0; i < 20; i++) {
+            randomPos.x = Random.Range(-12.0f, 12.0f);
+            randomPos.y = Random.Range(-12.0f, 12.0f);
 
-
-
-            Instantiate(enemies[0],transform.position + randomPos,Quaternion.identity);
+            GameObject enemy = Instantiate(enemies[0],transform.position + randomPos,Quaternion.identity) as GameObject;
+            enemy.transform.SetParent(transform);
         }
     }
 
