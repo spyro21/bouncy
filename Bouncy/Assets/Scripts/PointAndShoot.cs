@@ -10,6 +10,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float bulletSpeed = 50.0f;
+    public float cameraSpeed = 4.5f;
 
     private Vector3 target;
 
@@ -37,6 +38,8 @@ public class PointAndShoot : MonoBehaviour
             direction.Normalize();
             fireBullet(direction, rotationZ);
         }
+
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, cameraSpeed * Time.deltaTime);
     }
 
     void fireBullet(Vector2 direction, float rotationZ)
@@ -46,4 +49,6 @@ public class PointAndShoot : MonoBehaviour
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f,rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
+
+    
 }

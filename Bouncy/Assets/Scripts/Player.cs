@@ -28,12 +28,20 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+
         // movement
         rb.MovePosition(transform.position + movement * speed * Time.fixedDeltaTime);
     }
 
     public void changeHealth(int increment) {
         this.health += increment;
+    }
+
+    public float getRange() {
+        return range;
+    }
+
+    public float getSpeed() {
+        return speed;
     }
 }
