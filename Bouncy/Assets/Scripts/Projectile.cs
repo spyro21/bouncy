@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private GameObject player;
+    private GameObject enemyS;
     private Vector2 distance;
     private float range;
 
@@ -12,6 +13,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        enemyS = GameObject.FindGameObjectWithTag("enemySpawner");
         range = player.GetComponent<Player>().range;
     }
 
@@ -28,7 +30,9 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("enemy")) {
+            enemyS.gameObject.SendMessage("enemyDeath");
             Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }
