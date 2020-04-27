@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float range;
     public float health;
+    public float damage;
 
 
     void Start()
