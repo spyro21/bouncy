@@ -48,6 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealthBar: {fileID: 7021397023388692335, guid: 090a5f7313d6f6a4ea87b2af4b48ec90,
     type: 3}
+  target: {fileID: 0}
+  health: 0
+  currState: 0
+  sight: 20.7
+  speed: 2
+  test: 0
 --- !u!212 &4728914525358515173
 SpriteRenderer:
   m_ObjectHideFlags: 0

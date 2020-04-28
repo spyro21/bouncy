@@ -14,15 +14,11 @@ public class enemySpawn : MonoBehaviour
     public int min;
     public int max;
     public int numEnemies;
-
+    private int difficulty;
 
     // Start is called before the first frame update
     void Start()
-    {
-        round = 1;
-
-        min = 3;
-        max = 5;
+    {   
         numEnemies = Random.Range(min, max);
         
         for (int i = 0; i < numEnemies; i++) {
