@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
 
         maxHealth = 8f;
-        health = 5f;
+        health = maxHealth;
         healthbarPos.y = 0.8f;
         healthbarPos.x = -0.5f;
         hb = Instantiate(enemyHealthBar, transform.position + healthbarPos, Quaternion.identity);
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hb.transform.localScale.Set((health / maxHealth), hb.transform.localScale.y, hb.transform.localScale.z);
+        hb.transform.localScale = new Vector3((health / maxHealth), hb.transform.localScale.y, hb.transform.localScale.z);
         if (health <= 0) {
             Destroy(gameObject);
             enemyS.gameObject.SendMessage("enemyDeath");
